@@ -1,20 +1,18 @@
-import { Box, Steps as ChakraSteps } from "@chakra-ui/react"
-import { LuCheck } from "react-icons/lu"
+import {Box, Steps as ChakraSteps} from '@chakra-ui/react'
+import {LuCheck} from 'react-icons/lu'
 
 interface StepInfoProps {
   title?: React.ReactNode
   description?: React.ReactNode
 }
 
-export interface StepsItemProps
-  extends Omit<ChakraSteps.ItemProps, "title">,
-    StepInfoProps {
+export interface StepsItemProps extends Omit<ChakraSteps.ItemProps, 'title'>, StepInfoProps {
   completedIcon?: React.ReactNode
   icon?: React.ReactNode
 }
 
 export const StepsItem = (props: StepsItemProps) => {
-  const { title, description, completedIcon, icon, ...rest } = props
+  const {title, description, completedIcon, icon, ...rest} = props
   return (
     <ChakraSteps.Item {...rest}>
       <ChakraSteps.Trigger>
@@ -32,7 +30,7 @@ export const StepsItem = (props: StepsItemProps) => {
 }
 
 const StepInfo = (props: StepInfoProps) => {
-  const { title, description } = props
+  const {title, description} = props
   if (title && description) {
     return (
       <Box>
@@ -44,9 +42,7 @@ const StepInfo = (props: StepInfoProps) => {
   return (
     <>
       {title && <ChakraSteps.Title>{title}</ChakraSteps.Title>}
-      {description && (
-        <ChakraSteps.Description>{description}</ChakraSteps.Description>
-      )}
+      {description && <ChakraSteps.Description>{description}</ChakraSteps.Description>}
     </>
   )
 }
@@ -57,7 +53,7 @@ interface StepsIndicatorProps {
 }
 
 export const StepsIndicator = (props: StepsIndicatorProps) => {
-  const { icon = <ChakraSteps.Number />, completedIcon } = props
+  const {icon = <ChakraSteps.Number />, completedIcon} = props
   return (
     <ChakraSteps.Indicator>
       <ChakraSteps.Status complete={completedIcon} incomplete={icon} />

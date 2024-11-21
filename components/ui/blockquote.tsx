@@ -1,5 +1,5 @@
-import { Blockquote as ChakraBlockquote } from "@chakra-ui/react"
-import { forwardRef } from "react"
+import {Blockquote as ChakraBlockquote} from '@chakra-ui/react'
+import {forwardRef} from 'react'
 
 export interface BlockquoteProps extends ChakraBlockquote.RootProps {
   cite?: React.ReactNode
@@ -10,14 +10,12 @@ export interface BlockquoteProps extends ChakraBlockquote.RootProps {
 
 export const Blockquote = forwardRef<HTMLDivElement, BlockquoteProps>(
   function Blockquote(props, ref) {
-    const { children, cite, citeUrl, showDash, icon, ...rest } = props
+    const {children, cite, citeUrl, showDash, icon, ...rest} = props
 
     return (
       <ChakraBlockquote.Root ref={ref} {...rest}>
         {icon}
-        <ChakraBlockquote.Content cite={citeUrl}>
-          {children}
-        </ChakraBlockquote.Content>
+        <ChakraBlockquote.Content cite={citeUrl}>{children}</ChakraBlockquote.Content>
         {cite && (
           <ChakraBlockquote.Caption>
             {showDash ? <>&mdash;</> : null} <cite>{cite}</cite>

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format-and-lint": "biome check . --write"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.0.0",
@@ -20,6 +21,7 @@
     "use-async-effect": "^2.2.7"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/lodash": "^4.17.12",
     "@types/node": "^22.9.0",
     "@types/react": "^18",

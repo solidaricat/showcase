@@ -1,7 +1,7 @@
 export const format = (
   value?: number | null,
   currency?: string | null,
-  isMobile: boolean = false,
+  isMobile = false,
   notation?: 'standard' | 'compact' | 'scientific' | 'engineering',
 ) => {
   const options = Object.assign(
